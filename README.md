@@ -1,2 +1,2 @@
-# computational_fluid_dynamics
-All the codes relating fluid mechanics and CFD, written in various languages. 
+# CFD ( Computational Fluid Dynamics ) 
+All my codes relating fluid mechanics and CFD, written in various languages.
