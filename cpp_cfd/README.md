@@ -1,7 +1,6 @@
 Table of contents: 
 
 | 1D - Linear Convection       |
-|------------------------------|
 | 1D - Convection              |
 | 1D - Diffusion               |
 | 1D - Diffusion Convection    |
