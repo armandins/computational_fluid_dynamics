@@ -2,10 +2,10 @@
 	Solution to 1D non-viscous Burgers' equation.
 	Computed using Lax-Wendroff Scheme.
 	https://en.wikipedia.org/wiki/Lax%E2%80%93Wendroff_method
-	Author::	Arman Dindar Safa
-	Date::		12 / 30 / 2023
-	Version::	1.00
-    Source::    Computational Fluid Dynamics: Principles and Applications, J. Blazek
+	Author:     Arman Dindar Safa
+	Date:       12 / 30 / 2023
+	Version:    1.00
+    Source:     Computational Fluid Dynamics: Principles and Applications, J. Blazek
 */
 
 #include <iostream>
@@ -35,12 +35,12 @@ void TECPLOTwriter(string filename, double endtime, int nx, vector<double>& x, v
 //  -----------------------------------------------------------------------------------------------------
 
 int main(){
-	// * Params. 
-	int64_t nx			{81};
-    double xa 			{0.0}; 
-    double xb 			{1.0};
-    double endtime 		{0.5};
-    double dt 			{1.0e-2};
+    // * Params. 
+    int64_t nx          {81};
+    double xa           {0.0}; 
+    double xb           {1.0};
+    double endtime      {0.5};
+    double dt           {1.0e-2};
 
     vector<double> x(nx); 
     vector<double> u0(nx); 
@@ -48,13 +48,13 @@ int main(){
 
     string TECPLOTDATA {"data"};
 
-    x.assign	(nx, 0.0);
-    u0.assign	(nx, 0.0);
-    u.assign	(nx, 0.0);
+    x.assign    (nx, 0.0);
+    u0.assign   (nx, 0.0);
+    u.assign    (nx, 0.0);
 
-    initialCond (xa, xb, x, u0, nx);
-    BurgFD1D    (u0, endtime, dt, x, u, nx);
-    TECPLOTwriter(TECPLOTDATA, endtime, nx, x, u0, u);
+    initialCond    (xa, xb, x, u0, nx);
+    BurgFD1D       (u0, endtime, dt, x, u, nx);
+    TECPLOTwriter  (TECPLOTDATA, endtime, nx, x, u0, u);
 
     cout << "X\t\tInitialU\t\tLaxWendroffU" << '\n';
     
@@ -75,7 +75,7 @@ void initialCond(double xa, double xb, vector<double>& x, vector<double>& u_init
     for (int i = 1; i < nx; i++)    x[i] = x[0] + (i * dx);
     for (int i = 0; i < nx; i++){
         if (x[i] <= 0.5)        u_init[i] = 1.0;
-        else				    u_init[i] = 0.0;
+        else                    u_init[i] = 0.0;
      
     }
 }
